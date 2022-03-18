@@ -1,6 +1,7 @@
 ﻿using Xunit;
 using System.Collections.Generic;
 using GildedRoseKata;
+using FluentAssertions;
 
 namespace GildedRoseTests
 {
@@ -16,8 +17,9 @@ namespace GildedRoseTests
 
             var sellIn = 10;
             var quality = 21;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }
         [Fact]
         public void UpdateQuality_10DaysBeforeSellIn_RaiseQualityBy2()
@@ -29,8 +31,9 @@ namespace GildedRoseTests
 
             var sellIn = 9;
             var quality = 22;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }
         [Fact]
         public void UpdateQuality_6DaysBeforeSellIn_RaiseQualityBy2()
@@ -42,8 +45,9 @@ namespace GildedRoseTests
 
             var sellIn = 5;
             var quality = 22;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }
         [Fact]
         public void UpdateQuality_5DaysBeforeSellIn_RaiseQualityBy3()
@@ -55,8 +59,9 @@ namespace GildedRoseTests
 
             var sellIn = 4;
             var quality = 23;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }
         [Fact]
         public void UpdateQuality_1DaysBeforeSellIn_RaiseQualityBy3()
@@ -68,8 +73,9 @@ namespace GildedRoseTests
 
             var sellIn = 0;
             var quality = 23;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }
         [Fact]
         public void UpdateQuality_1DaysBeforeSellIn_RaiseQualityBy3Limit50()
@@ -82,8 +88,9 @@ namespace GildedRoseTests
 
             var sellIn = 0;
             var quality = 50;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }
         [Fact]
         public void UpdateQuality_0DaysBeforeSellIn_DropQualityTo0()
@@ -95,8 +102,9 @@ namespace GildedRoseTests
 
             var sellIn = -1;
             var quality = 0;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }
         [Fact]
         public void UpdateQuality_AfterQuality50_NoQualityChange()
@@ -109,8 +117,9 @@ namespace GildedRoseTests
 
             var sellIn = 1;
             var quality = 50;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Xunit;
 using System.Collections.Generic;
 using GildedRoseKata;
+using FluentAssertions;
 
 namespace GildedRoseTests
 {
@@ -16,8 +17,9 @@ namespace GildedRoseTests
 
             var sellIn = 9;
             var quality = 18;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }
         [Fact]
         public void UpdateQuality_AfterSellIn_LowerQualityBy4()
@@ -29,8 +31,9 @@ namespace GildedRoseTests
 
             var sellIn = -1;
             var quality = 16;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }
         [Fact]
         public void UpdateQuality_AfterQuality0_NoQualityChange()
@@ -42,8 +45,9 @@ namespace GildedRoseTests
 
             var sellIn = 9;
             var quality = 0;
-            Assert.Equal(sellIn, Items[0].SellIn);
-            Assert.Equal(quality, Items[0].Quality);
+
+            Items[0].SellIn.Should().Be(sellIn);
+            Items[0].Quality.Should().Be(quality);
         }        
     }
 }
