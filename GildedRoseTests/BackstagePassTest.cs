@@ -7,11 +7,10 @@ namespace GildedRoseTests
 {
     public class BackstagePassTest
     {
-        IList<Item> Items = new List<Item> { 
-            new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 11, Quality = 20 } };
+        IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 11, Quality = 20 } };
         [Fact]
         public void UpdateQuality_11DaysBeforeSellIn_RaiseQualityBy1()
-        {            
+        {
             GildedRose app = new GildedRose(Items);
             app.UpdateQuality();
 
@@ -120,6 +119,6 @@ namespace GildedRoseTests
 
             Items[0].SellIn.Should().Be(sellIn);
             Items[0].Quality.Should().Be(quality);
-        }        
+        }
     }
 }

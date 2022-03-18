@@ -7,7 +7,6 @@ namespace GildedRoseTests
 {
     public class NormalItemTest
     {
-        //IList<Item> Items = new List<Item> { new Item { Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20 } };
         IList<Item> Items = new List<Item> { new Item { Name = "Not a special item name", SellIn = 10, Quality = 20 } };
         
         [Fact]
