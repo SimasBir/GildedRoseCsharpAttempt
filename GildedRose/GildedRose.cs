@@ -71,9 +71,5 @@ namespace GildedRoseKata
                     break;
             }
         }
-        private void NewChange()
-        {
-            Console.WriteLine("something new");
-        }
     }
 }
